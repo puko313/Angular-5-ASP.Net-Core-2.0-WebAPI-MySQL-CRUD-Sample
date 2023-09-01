@@ -1,154 +1,125 @@
-Contribution: 2020-09-26 20:00
+![Mockup](Mockup.jpg)
+[Mockup source](https://www.anthonyboyd.graphics/mockups/2017/modern-iphone-x-macbook-pro-mockup-vol-2/)
+# IdeaShare Angular-WebAPI project
+
+This repository contains Web App built on Angular 5 that interacts with WebAPI which has MySQL database
+
+## Table of contents
+1. [Demo](#demo)
+2. [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Edit WebAPI config](#edit-webapi-config)
+    - [Code-first database migration](#code-first-database-migration)
+    - [Run project](#run-project)
+3. [Functionality Overview](#functionality-overview)
+    - [Features](#features)
+    - [WebAPI documentation](#webapi-documentation)
+    - [Page navigation](#page-navigation)
+4. [Built With](#built-with)
+5. [Roadmap](#roadmap)
+6. [Authors](#authors)
+7. [License](#license)
+
+## [Demo](http://ideashareapp.azurewebsites.net)
+
+- SignUp email verification is limited to 100 emails per day due to free plan.
+- Image uploading is restricted up to 500 KB
+- Froala WYSIWYG is trial so the red alert stays above editor
+
+*Reminder for Russia citizens: Microsoft Azure is banned in Russia (use VPN)*
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- Angular CLI
+- .NET Core Framework
+
+### Edit WebAPI config
+
+Settings are located in [appsettings.json](WebApi/appsettings.json). Change `insert_here` to your own keys.
+ 
+- ConnectionString
+- JWT SecretKey
+- Email/SendGridAPIKey [how to create SendGrid?](https://docs.microsoft.com/en-us/azure/sendgrid-dotnet-how-to-send-email)
+
+### Code-first database migration
+
+Generate database `dotnet ef migrations add InitialMigration` then `dotnet ef database update`
+
+### Run project
+
+Run `ASPNETCORE_Environment=Development dotnet run` to build project.
+
+## Functionality Overview
+
+### Features
+
+* Cross Platform
+* CRUD operations
+* Entity Framework Core MySQL
+* JWT Authentication
+* Swagger API documentation
+* Responsive Design
+
+### WebAPI documentation
+
+Online API documentation is located on [/Swagger](http://ideashareapp.azurewebsites.net/swagger/)
+
+### Page navigation
+
+- **Home**
+    - **Home** ../
+        - article list with infinite scrolling
+        - the most popular tags
+        - user leaderboard
+    - **Dependencies** ../dependencies
+        - static page
+        - information about used frameworks and third party libraries
+    - **Contacts** ../contacts
+        - static page
+- **Auth**
+    - **SignIn** ../auth/signin
+        - store JWT token in localStorage
+    - **SignUp** (/auth/signup)
+        - Email verification
+- **Idea**
+    - **Add new** ../idea/new
+        - Auth guard (redirects if user is not logged)
+        - edit list of tags
+        - article editor WYSIWYG
+    - **Details** ../idea/:id
+        - like/dislike button
+        - raw html render
+        - favorite button
+        - edit/restore button
+        - comments section
+    - **Search** ../idea/search/:value
+        - search by value in title and article
+- **Profile**
+    - **User info** ../profile/:username
+        - information about user
+        - list of favorited articles
+        - list of created articles
+    - **Settings** ../settings
+        - edit avatar
+        - change username
 
-Contribution: 2020-09-26 20:01
+## Built With
 
-Contribution: 2020-09-26 20:02
+* **ASP.NET Core 2.0 WebAPI**
+* **Angular 5**
+* **MySQL**
 
-Contribution: 2020-09-26 20:03
+## Roadmap
 
-Contribution: 2020-09-26 20:04
+- [ ] Localization
+- [ ] WebAPI.Tests
+- [ ] Edit articles/comments
+- [ ] Administrator dashboard
 
-Contribution: 2020-09-28 20:00
 
-Contribution: 2020-09-28 20:01
+## License
 
-Contribution: 2020-09-28 20:02
-
-Contribution: 2020-09-28 20:03
-
-Contribution: 2020-09-28 20:04
-
-Contribution: 2020-09-29 20:00
-
-Contribution: 2020-09-29 20:01
-
-Contribution: 2020-09-29 20:02
-
-Contribution: 2020-09-29 20:03
-
-Contribution: 2020-09-30 20:00
-
-Contribution: 2020-09-30 20:01
-
-Contribution: 2020-09-30 20:02
-
-Contribution: 2020-09-30 20:03
-
-Contribution: 2020-09-30 20:04
-
-Contribution: 2020-10-01 20:00
-
-Contribution: 2020-10-01 20:01
-
-Contribution: 2020-10-06 20:00
-
-Contribution: 2020-10-07 20:00
-
-Contribution: 2020-10-07 20:01
-
-Contribution: 2020-10-07 20:02
-
-Contribution: 2020-10-07 20:03
-
-Contribution: 2020-10-11 20:00
-
-Contribution: 2020-10-11 20:01
-
-Contribution: 2020-10-11 20:02
-
-Contribution: 2020-10-13 20:00
-
-Contribution: 2020-10-13 20:01
-
-Contribution: 2020-10-13 20:02
-
-Contribution: 2020-10-18 20:00
-
-Contribution: 2020-10-18 20:01
-
-Contribution: 2020-10-18 20:02
-
-Contribution: 2020-10-18 20:03
-
-Contribution: 2020-10-21 20:00
-
-Contribution: 2020-10-21 20:01
-
-Contribution: 2020-10-21 20:02
-
-Contribution: 2020-10-21 20:03
-
-Contribution: 2020-10-23 20:00
-
-Contribution: 2020-10-23 20:01
-
-Contribution: 2020-10-24 20:00
-
-Contribution: 2020-10-24 20:01
-
-Contribution: 2020-10-24 20:02
-
-Contribution: 2020-10-24 20:03
-
-Contribution: 2020-10-26 20:00
-
-Contribution: 2020-10-26 20:01
-
-Contribution: 2020-10-26 20:02
-
-Contribution: 2020-10-27 20:00
-
-Contribution: 2020-10-27 20:01
-
-Contribution: 2020-10-27 20:02
-
-Contribution: 2020-10-27 20:03
-
-Contribution: 2020-10-27 20:04
-
-Contribution: 2020-10-28 20:00
-
-Contribution: 2020-10-28 20:01
-
-Contribution: 2020-10-28 20:02
-
-Contribution: 2020-10-28 20:03
-
-Contribution: 2020-10-28 20:04
-
-Contribution: 2020-10-29 20:00
-
-Contribution: 2020-10-29 20:01
-
-Contribution: 2020-10-31 20:00
-
-Contribution: 2020-10-31 20:01
-
-Contribution: 2020-10-31 20:02
-
-Contribution: 2020-10-31 20:03
-
-Contribution: 2020-11-02 20:00
-
-Contribution: 2020-11-02 20:01
-
-Contribution: 2020-11-02 20:02
-
-Contribution: 2020-11-07 20:00
-
-Contribution: 2020-11-07 20:01
-
-Contribution: 2020-11-07 20:02
-
-Contribution: 2020-11-07 20:03
-
-Contribution: 2020-11-10 20:00
-
-Contribution: 2020-11-10 20:01
-
-Contribution: 2020-11-10 20:02
-
-Contribution: 2020-11-10 20:03
-
-Contribution: 2020-11-10 20:04
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
